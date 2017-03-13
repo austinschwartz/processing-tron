@@ -3,6 +3,5 @@ interface Bot {
   int makeMove();
   int getX();
   int getY();
-  boolean isDead();
   void updatePos(int x, int y);
 }

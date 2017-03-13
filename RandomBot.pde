@@ -2,22 +2,15 @@ class RandomBot implements Bot {
   Color c;
   Map map;
   int x, y;
-  boolean dead;
   RandomBot(Map map, Color c, int x, int y) {
     this.map = map;
     this.c = c;
     updatePos(x, y);
   }
   
-  boolean isDead() { return dead; }
-  
-  int getX() {
-    return x;
-  }
-  
-  int getY() {
-    return y;
-  }
+  int getX() { return x; }  
+  int getY() { return y; }
+  Color getColor() { return c; }
   
   void updatePos(int x, int y) {
     this.x = x;
@@ -35,15 +28,10 @@ class RandomBot implements Bot {
       if (!map.isWall(x - 1, y))
           validMoves.add(3);
       if (validMoves.size() == 0) {
-        dead = true;
         return 0;
       } else {
         int whichMove = int(random(validMoves.size()));
         return validMoves.get(whichMove);
       }  
-  }
-  
-  Color getColor() {
-    return c;
   }
 }

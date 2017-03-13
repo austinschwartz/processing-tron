@@ -1,14 +1,14 @@
 class Map {
-  int cols, rows;
+  int rows, cols;
   Cell[][] grid;
   
-  Map(int cols, int rows) {
-    this.cols = cols;
+  Map(int rows, int cols) {
     this.rows = rows;
-    grid = new Cell[cols][rows];
-    for (int i = 0; i < cols; i++) {
-      for (int j = 0; j < rows; j++) {
-        grid[i][j] = new Cell(i * 20,j * 20, 20, 20, Color.WHITE);
+    this.cols = cols;
+    grid = new Cell[rows][cols];
+    for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < cols; j++) {
+        grid[i][j] = new Cell(i * 20, j * 20, 20, 20, Color.WHITE);
       }
     }
   }
@@ -36,8 +36,8 @@ class Map {
   }
   
   void draw() {
-    for (int i = 0; i < cols; i++) {
-      for (int j = 0; j < rows; j++) {
+    for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < cols; j++) {
         grid[i][j].display();
       }
     }
