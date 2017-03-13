@@ -5,7 +5,7 @@ enum Color {
   WHITE(255, 255, 255);
   
   int r, g, b;
-  Color(tempR, tempG, tempB) {
+  private Color(int tempR, int tempG, int tempB) {
     this.r = tempR;
     this.g = tempG;
     this.b = tempB;
