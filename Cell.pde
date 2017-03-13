@@ -10,11 +10,11 @@ class Cell {
     w = tempW;
     h = tempH;
     c = tempC;
-  } 
+  }
 
   void display() {
-    stroke(255);
-    fill(c.r, c.g, c.b);
-    rect(x,y,w,h); 
+    stroke(0);
+    fill(c.r, c.g, int(random(2, 200)));
+    rect(x, y, w, h); 
   }
 }
