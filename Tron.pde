@@ -5,6 +5,10 @@ Map map;
 
 void setup() {
   size(500,500);
+  create_entities();
+}
+
+void create_entities() {
   map = new Map(cols, rows);
   one = new RandomBot(map, Color.RED, 5, 5);
   two = new RandomBot(map, Color.BLUE, 15, 15);
@@ -18,6 +22,8 @@ void update_player(Bot p) {
   if (nd == 3) p.updatePos(p.getX() - 1, p.getY());
   if (!p.isDead()) {
     map.place(p);
+  } else {
+    create_entities();
   }
 }
 
